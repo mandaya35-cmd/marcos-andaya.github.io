@@ -270,3 +270,7 @@ dd{margin:0;color:#C9D4E8}
 }
 @media(max-width:560px){.vids{grid-template-columns:1fr}.sk ul{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.belt{flex-wrap:wrap;width:auto;transform:none}.belt li[aria-hidden]{display:none}.rv{opacity:1;transform:none}}
+
+.mailrow{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1rem;margin-top:1.2rem;font-weight:700;color:#00281A}
+.mailrow button{font:700 .9rem var(--b);background:#00281A;color:var(--yellow);border:0;border-radius:99px;padding:.4rem 1rem;cursor:pointer}
+.mailrow a{color:#00281A;text-underline-offset:3px}

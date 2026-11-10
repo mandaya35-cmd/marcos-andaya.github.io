@@ -10,11 +10,12 @@
     if(i===rows.length-1&&p===1){tr.classList.remove('all');void tr.offsetWidth;tr.classList.add('all')}
     step++};
     setTimeout(function(){tick();setInterval(tick,1300)},1900)}
-  // contact links are assembled here so the address is not sitting in plain HTML for scrapers
-  var u='mandaya35',d='gmail.com',n='+639763960526';
-  document.getElementById('mail').href='mailto:'+u+'@'+d;
-  document.getElementById('book').href='mailto:'+u+'@'+d+'?subject='+encodeURIComponent('Book a call with Marcos')+'&body='+encodeURIComponent('Hi Marcos, I would like to book a call. My time zone is:\nBest days and times:\n');
-  document.getElementById('tel').href='tel:'+n;
+  // copy-email button (works even when no mail app is set up)
+  var cp=document.getElementById('copy');
+  cp.addEventListener('click',function(){var t='mandaya35@gmail.com';
+    var done=function(){cp.textContent='Copied \u2713';setTimeout(function(){cp.textContent='Copy email'},2000)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){prompt('Copy this email:',t)})}
+    else{prompt('Copy this email:',t)}});
   // mobile menu
   var m=document.querySelector('.menu'),nav=document.querySelector('.nav nav');
   m.addEventListener('click',function(){var o=nav.classList.toggle('open');m.setAttribute('aria-expanded',o)});
